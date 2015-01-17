@@ -11,7 +11,7 @@ public class Config {
 
     @Bean(destroyMethod = "close")
     public Node node() {
-        return NodeBuilder.nodeBuilder().node();
+        return NodeBuilder.nodeBuilder().client(true).node();
     }
 
     @Bean
