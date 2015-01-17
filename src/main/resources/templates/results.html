@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Search In A Box - Results</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<table>
+    <tr th:each="result : ${results}">
+        <td th:text="${result.source.question}"/>
+        <td th:text="${result.source.answer}"/>
+    </tr>
+</table>
+<p><span th:text="${results.length}"/> result(s)</p>
+
+</body>
+</html>
