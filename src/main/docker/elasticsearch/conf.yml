@@ -1,3 +1,6 @@
 ports:
     - 9200
     - 9300
+healthChecks:
+    pings:
+        - url: http://localhost:9200/
