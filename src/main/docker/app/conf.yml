@@ -3,11 +3,11 @@ packaging:
     - target/${project.build.finalName}.jar
 ports:
   - 8080
-links:
-  - elasticsearch
+  - 9200
+  - 9300
 healthChecks:
   pings:
+    - url: http://localhost:9200/
     - url: http://localhost:8080/
-      timeout: 60000
 tag:
-    searchinabox/app:${project.version}
+    searchinabox/searchinabox:${project.version}

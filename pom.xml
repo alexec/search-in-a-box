@@ -43,9 +43,19 @@
     <build>
         <plugins>
             <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>data</directory>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>com.alexecollins.docker</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>2.3.1-SNAPSHOT</version>
+                <version>2.3.1</version>
                 <executions>
                     <execution>
                         <goals>
@@ -60,7 +70,7 @@
                     <dependency>
                         <groupId>com.alexecollins.docker</groupId>
                         <artifactId>docker-java-orchestration-plugin-boot2docker</artifactId>
-                        <version>2.3.0</version>
+                        <version>2.3.1</version>
                     </dependency>
                 </dependencies>
             </plugin>

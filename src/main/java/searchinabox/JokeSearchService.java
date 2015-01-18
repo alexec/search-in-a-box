@@ -18,12 +18,10 @@ public class JokeSearchService {
     private Client client;
 
     @PostConstruct
-    public void indexJokes() throws IOException {
+    public void indexJokes() throws Exception {
         // create an index name "jokes" to store the jokes in
         try {
-            if (!client.admin().indices().prepareCreate("jokes").execute().actionGet().isAcknowledged()) {
-                throw new IllegalStateException("failed to create index");
-            }
+            client.admin().indices().prepareCreate("jokes").get();
         } catch (IndexAlreadyExistsException ignored) {
         }
 
@@ -33,7 +31,7 @@ public class JokeSearchService {
 
     private void storeJoke(int id, String question, String answer) throws IOException {
         // index a document ID  of type "joke" in the "jokes" index
-        if (client.prepareIndex("jokes", "joke", String.valueOf(id))
+        client.prepareIndex("jokes", "joke", String.valueOf(id))
                 .setSource(
                         XContentFactory.jsonBuilder()
                                 .startObject()
@@ -41,17 +39,13 @@ public class JokeSearchService {
                                 .field("answer", answer)
                                 .endObject()
                 )
-                .execute()
-                .actionGet().isCreated()) {
-            throw new IllegalStateException("joke not created");
-        }
+                .get();
     }
 
     public SearchHit[] search(String query) {
         return client.prepareSearch("jokes")
                 .setTypes("joke")
                 .setQuery(QueryBuilders.multiMatchQuery(query, "question", "answer"))
-                .execute()
-                .actionGet().getHits().getHits();
+                .get().getHits().getHits();
     }
 }
