@@ -22,6 +22,6 @@ public class AppIT {
         $(By.name("query")).sendKeys("bears");
         $(By.cssSelector("input[type='submit']")).submit();
 
-        $$(By.tagName("td")).find(exactText("The North Poll!")).should(exist);
+        $$(By.tagName("span")).find(exactText("The North Poll!")).should(exist);
     }
 }

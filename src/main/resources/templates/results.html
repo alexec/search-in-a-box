@@ -3,15 +3,18 @@
 <head>
     <title>Search In A Box - Results</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
 </head>
 <body>
-<table>
-    <tr th:each="result : ${results}">
-        <td th:text="${result.source.question}"/>
-        <td th:text="${result.source.answer}"/>
-    </tr>
-</table>
-<p><span th:text="${results.length}"/> result(s)</p>
-
+<div class="container">
+    <h1>Search Results</h1>
+    <div th:each="result : ${results}">
+        <p>
+            <b th:text="${result.source.question}"/>
+            <span th:text="${result.source.answer}"/>
+        </p>
+    </div>
+    <p><span th:text="${results.length}"/> result(s)</p>
+</div>
 </body>
 </html>

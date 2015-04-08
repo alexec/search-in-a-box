@@ -3,11 +3,15 @@
 <head>
     <title>Search In A Box</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
 </head>
 <body>
-<form method="post">
-    <input name="query"/>
-    <input type="submit"/>
-</form>
+<div class="container">
+    <h1>Search</h1>
+    <form method="post" class="form-inline">
+        <input type="search" name="query" class="form-control" />
+        <input type="submit" value="Search" class="btn btn-default" />
+    </form>
+</div>
 </body>
 </html>
