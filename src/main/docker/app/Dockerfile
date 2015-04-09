@@ -8,4 +8,4 @@ WORKDIR /
 
 ADD ${project.build.finalName}.jar .
 
-CMD java  -jar /${project.build.finalName}.jar
+CMD java -jar /${project.build.finalName}.jar
