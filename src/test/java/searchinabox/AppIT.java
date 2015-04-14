@@ -10,12 +10,6 @@ import static com.codeborne.selenide.Selenide.*;
 public class AppIT {
 
     @Test
-    public void homepageShowsSearchBox() throws Exception {
-        open("/");
-        $(By.cssSelector("input[name='query']")).should(exist);
-    }
-
-    @Test
     public void searchingForBearsFindsTheNorthPollJoke() throws Exception {
 
         open("/");

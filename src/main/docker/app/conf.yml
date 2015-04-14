@@ -8,6 +8,8 @@ ports:
 healthChecks:
   pings:
     - url: http://localhost:9200/
+      timeout: 60000
     - url: http://localhost:8080/
+      timeout: 60000
 tag:
     searchinabox/searchinabox:${project.version}
