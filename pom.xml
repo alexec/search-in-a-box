@@ -14,6 +14,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <docker-maven-plugin.version>2.6.0-SNAPSHOT</docker-maven-plugin.version>
     </properties>
 
     <dependencies>
@@ -59,7 +60,7 @@
             <plugin>
                 <groupId>com.alexecollins.docker</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>2.5.0</version>
+                <version>${docker-maven-plugin.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -76,7 +77,7 @@
                     <dependency>
                         <groupId>com.alexecollins.docker</groupId>
                         <artifactId>docker-java-orchestration-plugin-boot2docker</artifactId>
-                        <version>2.5.0</version>
+                        <version>${docker-maven-plugin.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
