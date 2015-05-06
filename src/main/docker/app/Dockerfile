@@ -1,4 +1,4 @@
-FROM dockerfile/java:oracle-java7
+FROM java:7
 
 EXPOSE 8080
 EXPOSE 9200
