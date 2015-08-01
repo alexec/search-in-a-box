@@ -79,7 +79,7 @@
             <plugin>
                 <groupId>com.alexecollins.docker</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>2.9.3-SNAPSHOT</version>
+                <version>2.9.4-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <goals>
